@@ -1,0 +1,31 @@
+
+h1 {
+  text-align: center;
+  color:#FFFFFF; 
+  text-shadow: 2px 2px #0F3C64
+}
+
+h2 {
+  text-align: center;
+  color:#FFFFFF; 
+  text-shadow: 2px 2px #0F3C64
+
+}
+
+body {
+  text-align: center;
+  background-color:#D4E7F2;
+  color:#336591;
+}
+p {
+  font-size: 150%;
+  font-family:"Papyrus";
+}
+a:visited {
+  color: #0F3C64;
+
+}
+
+a:active {
+  background-color: yellow;
+}
