@@ -10,12 +10,20 @@ h2 {
   color:#FFFFFF; 
   text-shadow: 2px 2px #0F3C64
 
+
+}
+
+
+h3 {
+  color:#0F3C64; 
+ 
 }
 
 body {
   text-align: center;
-  background-color:#D4E7F2;
   color:#336591;
+  background-color:#D4E7F2;
+
 }
 p {
   font-size: 150%;
@@ -28,4 +36,10 @@ a:visited {
 
 a:active {
   background-color: yellow;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
