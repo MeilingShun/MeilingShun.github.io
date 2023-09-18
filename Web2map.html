@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Attach a popup to a marker instance</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+<style>
+body { margin: 0 ; padding: 0;}
+#map { position: absolute; top: 25%; bottom: 30% ;right: 5% ;width: 45%; height:65%;}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body style="background-color: #EDF6F7;">
+
+        <h2 style="text-align: center;font-family:italic;color:#234356;"> 12 Most famous museums in New York City </h2>
+        <p style="text-align: center;font-family:italic;color:#234356;  font-size: 120%;">If it's your first time in New York, there's a high chance you might end up wandering or missing out on key attractions. Therefore,my map introduces the 12 most famous museums in New York. The design style is very simple; you just need to click on a marker to display the name of the museum or click the name.</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+        <a style="color:#A24246;font-size: 120% ;font-family:italic; position: absolute; left:1%; "target="_blank" href="https://www.metmuseum.org/">1. The Metropolitan Museum of Art in New York</a>
+  <br><br>
+
+        <a style="color:#C95C1D;font-size: 120% ;font-family:italic; position: absolute; left:1%; "target="_blank" href="https://www.amnh.org">2. American Museum of Natural History</a>
+  <br><br>
+
+        <a style="color:#D2CF0F;font-size: 120% ;font-family:italic; position: absolute; left:1%; "target="_blank" href="https://www.moma.org">3. The Museum of Modern Art</a>
+  <br><br>
+        <a style="color:#C9C99C;font-size: 120% ;font-family:italic; position: absolute; left:1%; "target="_blank" href="https://whitney.org">4. Whitney Museum of American Art </a>
+  <br><br>
+         <a style="color:#FF9E22;font-size: 120% ;font-family:italic; position: absolute; left:1%; "target="_blank" href="https://www.elmuseo.org">5. El Museo del Barrio </a>
+  <br><br> 
+        <a style="color:#ABDE0E;font-size: 120% ;font-family:italic; position: absolute; left:1%; "target="_blank" href="https://www.brooklynmuseum.org">6. Brooklyn Museum</a>
+  <br> <br> 
+        <a style="color:#4FDCC0;font-size: 120% ;font-family:italic; position: absolute; left:1%; "target="_blank" href="https://www.guggenheim.org">7. Solomon R. Guggenheim Museum</a>
+  <br><br>
+        <a style="color:#E79FD7;font-size: 120% ;font-family:italic; position: absolute; left:1%; "target="_blank" href="https://www.metmuseum.org/visit/plan-your-visit/met-cloisters">8. The Met Cloisters</a>
+  <br><br>
+        <a style="color:#3C77A3;font-size: 120% ;font-family:italic; position: absolute; left:1%; "target="_blank" href="https://www.mcny.org">9. Museum of the City of New York</a>
+  <br><br>
+        <a style="color:#A686AB;font-size: 120% ;font-family:italic; position: absolute; left:1%; "target="_blank" href="https://www.newmuseum.org">10. New Museum</a>
+  <br><br>
+        <a style="color:#F52727;font-size: 120% ;font-family:italic; position: absolute; left:1%; "target="_blank" href="https://www.statueofliberty.org/statue-of-liberty/statue-of-liberty-museum/">11. Statue of Liberty Museum </a>
+  <br><br>
+        <a style="color:#000000;font-size: 120% ;font-family:italic; position: absolute; left:1%; "target="_blank" href="https://www.911memorial.org">12. The National September 11 Memorial & Museum</a>
+  <br>
+
+       <div id="map"></div>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWVpbGluZ3MiLCJhIjoiY2xtZHFlcm4zMWZzMDNuczZ6YnV0MnZnOCJ9.p2bDoaKxkfGM9cJ2Dh-nnw';
+    const map = new mapboxgl.Map({  
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v12',
+    center: [-73.979444, 40.763889],
+    zoom: 10,
+});
+
+const museums = [ 
+    {
+        name:'The Metropolitan Museum of Art in New York',
+        color: '#A24246',
+        rotation: "150",
+        lngLat:[-73.963402, 40.779434]
+
+    },
+    {
+        name: 'American Museum of Natural History',
+        color: '#C95C1D',
+        rotation: "320",
+        lngLat:[-73.974113,40.781303]
+
+    },
+    {
+        name: 'The Museum of Modern Art',
+        color: '#D2CF0F',
+        rotation: "340",
+        lngLat:[-73.978271,40.761509]
+
+    },
+    {
+        name: 'Whitney Museum of American Art',
+        color: '#C9C99C',
+        rotation: "320",
+        lngLat:[-74.008863,40.739588]
+
+    },
+    {
+        name: 'Brooklyn Museum',
+        color: '#ABDE0E',
+        rotation: "45",
+        lngLat:[-73.963631,40.671206]
+
+    },
+    {
+        name: 'Solomon R. Guggenheim Museum',
+        color: '#4FDCC0',
+        rotation: "60",
+        lngLat:[-73.958992,40.782951]
+
+    },
+    {
+        name: 'The Met Cloisters',
+        color: '#E79FD7',
+        rotation: "10",
+        lngLat:[-73.931727, 40.864863]
+
+    },
+    {
+        name: 'Museum of the City of New York',
+        color: '#3C77A3',
+        rotation: "340",
+        lngLat:[-73.951909,40.792494]
+
+    },
+    {
+        name: 'El Museo del Barrio',
+        color: '#FF9E22',
+        rotation: "-45",
+        lngLat:[-73.951406,40.793118]
+
+    },
+    {
+        name: 'New Museum',
+        color: '#A686AB',
+        rotation: "45",
+        lngLat:[-73.992890,40.722338]
+
+    },
+    {
+        name: 'Statue of Liberty Museum',
+        color: '#F52727',
+        rotation: "300",
+        lngLat:[-74.044502,40.689247]
+
+    },
+    {
+        name: 'The National September 11 Memorial & Museum',
+        color: '#000000',
+        rotation: "320",
+        lngLat:[-74.013855,40.711449]
+
+    },
+]
+
+museums.forEach(({name,color,rotation,lngLat})=> { 
+    const popup = new mapboxgl.Popup({offset: 25}).setText(name);
+    new mapboxgl.Marker({
+        color,
+        rotation,
+        scale: 1
+    })
+
+    .setLngLat(lngLat)
+    .setPopup(popup)
+    .addTo(map);
+})
+
+</script>
+</body>
+</html> 
