@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Video and Audio players.</title>
+        <link rel="stylesheet" href="Video.style.css">
+    
+   <script src="https://kit.fontawesome.com/c72350b913.js"></script>
+</head>
+<body>
+    <h1> Video Player</h1>
+    <div class="video-player">
+
+
+<video class ="video" id="video">
+     <source src="web2video.webm" type=video/webm> 
+    <source src="web2video.ogg" type=video/ogg> 
+    <source src="web2video.mp4"  type=video/mp4> 
+</video>
+
+<div class="controls">
+        <div class="progress">
+          <div class="progress__filled"></div>
+        </div>
+        <button class="controls__button toggleButton" title="Toggle Play"> ► </button>
+        <button class="controls__button volume-button" title="Volume">🔊</button>
+
+        <span class="video-time">0:00 / 0:00</span>
+    
+        <button class="controls__button" data-skip="-5">« 5s</button>
+        <button class="controls__button" data-skip="5">5s »</button>
+
+        <div class="fullscreen-container">
+        <button class="controls__button fullscreen-button">Full-Screen</button> 
+        
+    </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <h1>Audio Player</h1>
+    <main>
+        <div class="audio-info">
+            <h2>Otherside</h2>
+            <h3>Red Hot Chili Peppers </h3>
+        </div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </main>
+    <footer>
+        <button id="play"><i class="fas fa-play"></i></button>
+        <button id="pause"><i class="fas fa-pause"></i></button>
+        <button id="repeat"><i class="fas fa-redo"></i></button>
+
+    </footer>
+	<script src="Video.script.js"></script>
+    <script src="Audio.script.js"></script>
+
+  </body>
+</html>
