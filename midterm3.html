@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<link href="midterm3.css" rel="stylesheet" type="text/css">
+
+<style>
+
+body {
+    margin:0;
+    padding: 0;
+    
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #9E6E6B;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: yellow;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+</style>
+
+    <div class="navbar">
+        <a href="midterm.html">Home</a>
+        <a href="midterm2.html">Images Search</a>
+        <a href="midterm3.html">Comment</a>
+    </div>
+
+<body>
+
+
+<h1>What are your thoughts?</h1>
+<p>you can share your feeling or thoughts below:)</p>
+<br>
+<form action="" method="post" onsubmit="return false;">
+<INPUT TYPE="text" id="username" name="username" value="" placeholder="name" class="BG-Copy" size="30" />
+<INPUT TYPE="text" id="useremail" name="useremail" value="" placeholder="email" class="BG-Copy" size="30" />
+<br>
+<TEXTAREA NAME="feedback" id="feedback" ROWS="8" COLS="80" placeholder="You can say anything you'd like to share:)" class="BG-Copy" style="border:4px #9E6E6B dashed;"></TEXTAREA>
+<br>
+<INPUT TYPE="submit" VALUE="send" class="Base" style='text-align:"right"' onclick='processFormData();addMsg()'>
+</form>
+</body>
+
+<script src="midterm3.js"></script>
+</HTML>
+</html>
