@@ -1,0 +1,55 @@
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  color:yellow;
+}
+
+a:hover {
+  background-color: #ddd;
+  color:yellow;
+}
+
+.Academic{
+  background-color: #B6B6B3;
+  color: white;
+}
+
+div.scroll-container {
+  background-color: #B3A5A5;
+  overflow: auto;
+  white-space: nowrap;
+   padding: 20px;
+ 
+}
+ {
+  padding: 45px;
+}
+
+p {
+  text-align: center;
+  font-size:100% ; 
+  font-family:Courier New; 
+  color:#EAEA97;
+  background-color:#9C9090;
+}
+
+body{
+  background-color: #9E6E6B;
+
+}
+h1 {
+  text-align: center;
+  color:#FFFFFF; 
+  text-shadow: 2px 2px #EAEA97;
+  font-size: 40px;
+}
+h3{
+  font-style: italic;
+
+}
+
+h4{
+  font-style: italic;
+  text-align: left;
+}
