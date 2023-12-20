@@ -2,6 +2,7 @@ a {
   text-decoration: none;
   display: inline-block;
   padding: 8px 16px;
+  color:yellow;
 }
 
 a:hover {
@@ -51,3 +52,4 @@ h3{
 h4{
   font-style: italic;
   text-align: left;
+}

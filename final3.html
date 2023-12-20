@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="final3.css">
+  <style>
+    body { margin: 0; }
+
+    .navbar {
+      overflow: hidden;
+      background-color: #9E6E6B;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 2; /* Ensure the navbar is above the dropdown */
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .navbar a:hover {
+      background: #ddd;
+      color: yellow;
+    }
+
+    .dropdown-container {
+      text-align: center;
+      margin-top: 50px; /* Adjust this value to center the dropdown vertically */
+    }
+
+    form {
+      display: inline-block; /* Ensures the form is displayed inline */
+    }
+
+    /* Style the dropdown button */
+    .dropdown-btn {
+      background-color: #9E6E6B;
+      color: #f2f2f2;
+      padding: 14px 16px;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Style the dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      margin-top: 10px; /* Adjust this value to control the space between navbar and dropdown */
+    }
+
+    /* Style the dropdown links */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      display: block;
+      text-align: left;
+      text-decoration: none;
+    }
+
+    /* Change color on hover */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown-container:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+  <script>
+    function showUser(str) {
+      if (str == "") {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+      } else { 
+        if (window.XMLHttpRequest) {
+          // code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp = new XMLHttpRequest();
+        } else {
+          // code for IE6, IE5
+          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("txtHint").innerHTML = this.responseText;
+          }
+        };
+        xmlhttp.open("GET","php/final3.php?q="+str,true);
+        xmlhttp.send();
+      }
+    }
+  </script>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="final.html">Home</a>
+  <a href="final2.html">Image search</a>
+</div>
+
+<div class="dropdown-container">
+  <form>
+    <select name="users" onchange="showUser(this.value)">
+      <option value="">Select an anime:</option>
+      <option value="1">SPY x FAMILY Movie CODE: White</option>
+      <option value="2">City Hunter the Movie: Angel Dust</option>
+      <option value="3">Digimon Adventure 02: The Beginning</option>
+      <option value="4">Rascal Does Not Dream of a Knapsack Kid</option>
+      <option value="5">Ghost in the Shell: SAC_2045 - The Last Human</option>
+      <option value="6">Girls und Panzer: Saishuushou 4</option>
+      <option value="7">Kaina of the Great Snow Sea: Star Sage</option>
+      <option value="8">Kitarou Tanjou: Gegege no Nazo</option>
+      <option value="9">Komada - A Whisky Family</option>
+      <option value="12">Maboroshi</option>
+    </select>
+  </form>
+</div>
+
+</body>
+</html>
